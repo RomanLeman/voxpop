@@ -1,0 +1,41 @@
+<h1>Listing essences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Exp</th>
+      <th>Img url</th>
+      <th>Price</th>
+      <th>Type</th>
+      <th>Locate</th>
+      <th>Rating</th>
+      <th>Exp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @essences.each do |essence| %>
+      <tr>
+        <td><%= essence.title %></td>
+        <td><%= essence.description %></td>
+        <td><%= essence.exp %></td>
+        <td><%= essence.img_url %></td>
+        <td><%= essence.price %></td>
+        <td><%= essence.type %></td>
+        <td><%= essence.locate %></td>
+        <td><%= essence.rating %></td>
+        <td><%= essence.exp %></td>
+        <td><%= link_to 'Show', essence %></td>
+        <td><%= link_to 'Edit', edit_essence_path(essence) %></td>
+        <td><%= link_to 'Destroy', essence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Essence', new_essence_path %>
